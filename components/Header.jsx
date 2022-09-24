@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import React, {useState, useEffect} from 'react'
 import { getCategories } from '../services'
-
+import Image from 'next/image'
+import Logo from '../imgs/logo.png'
 
 const Header = () => {
     const [categories, setCategories] = useState([])
@@ -13,10 +14,12 @@ const Header = () => {
     <div className="container mx-auto px-10 mb-8">
         <div className='border-b w-full inline-block border-blue-400 py-8'>
             <div className='md:float-left block'>
+     
             <Link href="/">
                 <span className='cursor-pointer font-bold text-4xl text-white'>
-                    De Cero a Experto
+                    De Cero a Experto 
                 </span>
+
             </Link>
         </div>
         <div className='hidden md:float-left md:contents'>
