@@ -3,6 +3,22 @@ import {PostCard, Categories, PostWidget} from '../components'
 import { FeaturedPosts } from '../sections'
 import {getPosts} from '../services'
 
+import ReactGA from 'react-ga'
+//const TRACKING_ID = "UA-242789382-1"
+ReactGA.initialize('UA-242789382-1')
+
+
+const pageViewsTracking = (props) => {
+  const pathname = props.match.path;  
+
+let pageView;
+if (pathname === "*") pageView = '/not-found'
+else pageView = pathname
+
+ReactGA.pageview(pageView)
+}
+
+
 
 export default function Home({ posts }) {
   return (
